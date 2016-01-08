@@ -6,6 +6,8 @@ spring:
       server:
         git:
           uri: https://github.com/souravbh/cloudConfig
+        native:
+          searchLocations: file:/C:/sts/spring-boot-demo/configRepo/WebContent/repo
   profiles:
     active: cloud
 
