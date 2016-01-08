@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: mongobootdemo
+    name: bootmongodemo
   profiles:
     active: cloud
     include: defaults, demo

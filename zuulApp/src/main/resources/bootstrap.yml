@@ -17,9 +17,9 @@ zuul:
       path: /demo/*
       service-id: bootdemo
       strip-prefix: false
-    bootdemo1:
+    bootmongodemo:
       path: /customer/*
-      service-id: bootdemo
+      service-id: bootmongodemo
       strip-prefix: false
     feignClient:
       service-id: feignClient
@@ -27,6 +27,12 @@ zuul:
       strip-prefix: false
 
 bootdemo:
+  ribbon:
+    connect-timeout: 20000
+    server-list-refresh-interval: 1000
+    read-timeout: 20000
+
+bootmongodemo:
   ribbon:
     connect-timeout: 20000
     server-list-refresh-interval: 1000
