@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableDiscoveryClient
 @RefreshScope
 @EnableConfigurationProperties
-@EnableMongoRepositories
 public class BootDemoApplication {
 
 	public static void main(String[] args) {
