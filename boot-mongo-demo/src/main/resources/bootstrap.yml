@@ -6,7 +6,7 @@ spring:
     name: bootmongodemo
   profiles:
     active: cloud
-    include: defaults, demo
+    include: defaults
   cloud:
     config:
       uri: http://user:password@localhost:8888/
