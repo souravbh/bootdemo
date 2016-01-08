@@ -1,0 +1,46 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: zuulFilter
+  profiles:
+    active: cloud
+    include: defaults, demo
+  cloud:
+    config:
+      uri: http://user:password@localhost:8888/
+      
+zuul:
+  routes:
+    bootdemo:
+      path: /demo/*
+      service-id: bootdemo
+      strip-prefix: false
+    bootdemo1:
+      path: /customer/*
+      service-id: bootdemo
+      strip-prefix: false
+    feignClient:
+      service-id: feignClient
+      path: /hello/*
+      strip-prefix: false
+
+bootdemo:
+  ribbon:
+    connect-timeout: 20000
+    server-list-refresh-interval: 1000
+    read-timeout: 20000
+
+feignClient:
+  ribbon:
+    connect-timeout: 20000
+    server-list-refresh-interval: 1000
+    read-timeout: 20000
+        
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      default-zone: http://user:password@localhost:8761/eureka
